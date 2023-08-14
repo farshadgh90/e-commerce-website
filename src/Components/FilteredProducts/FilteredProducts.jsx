@@ -45,10 +45,10 @@ const FilteredProducts = () => {
             {type}
           </h1>
           <div className="flex items-center justify-between py-8">
-            <div className="flex items-center">
+            <div className="flex flex-wrap items-center">
               {genderButtons.map((item, index) => {
                 return (
-                  <div key={index}>
+                  <div key={index} className="my-1">
                     <Button
                       color="gray"
                       size="lg"
@@ -67,7 +67,7 @@ const FilteredProducts = () => {
                 size="lg"
                 variant="outlined"
                 ripple={true}
-                className="text-black font-medium hover:bg-gray-300 duration-300 ease-in-out mr-4"
+                className="text-black font-medium hover:bg-gray-300 duration-300 ease-in-out mr-4 my-1"
                 onClick={() => dispatch(sortByPrice())}
               >
                 high price
@@ -79,7 +79,7 @@ const FilteredProducts = () => {
                     size="lg"
                     variant="outlined"
                     ripple={true}
-                    className="text-black font-medium hover:bg-gray-300 duration-300 ease-in-out mr-4"
+                    className="text-black font-medium hover:bg-gray-300 duration-300 ease-in-out mr-4 my-1"
                   >
                     select a color
                   </Button>
@@ -106,7 +106,7 @@ const FilteredProducts = () => {
                     size="lg"
                     variant="outlined"
                     ripple={true}
-                    className="text-black font-medium hover:bg-gray-300 duration-300 ease-in-out mr-4"
+                    className="text-black font-medium hover:bg-gray-300 duration-300 ease-in-out mr-4 my-1"
                   >
                     select a size
                   </Button>
@@ -125,7 +125,7 @@ const FilteredProducts = () => {
                 </MenuList>
               </Menu>
             </div>
-            <div className="pr-14">
+            <div className="pr-14 flex self-start">
               <Button
                 color="gray"
                 size="lg"
@@ -142,7 +142,7 @@ const FilteredProducts = () => {
         {error ? (
           <Error />
         ) : (
-          <div className="grid grid-cols-4 justify-items-center py-8 gap-x-4 gap-y-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center py-8 gap-x-4 gap-y-14">
             {products
               .filter((product) => product.type === type)
               .map((product, index) => {

@@ -24,15 +24,15 @@ const SingleProduct = () => {
         .filter((product) => product.id === id)
         .map((item, index) => {
           return (
-            <div key={index} className="flex justify-center items-center py-10">
-              <div className="pl-44 grow-[2]">
+            <div key={index} className="flex flex-col md:flex-row duration-300 justify-center items-center py-10">
+              <div className="flex justify-center grow-[2] px-5 pb-5">
                 <img
-                  className="h-[850px] rounded-lg"
+                  className="md:h-[700px] lg:h-[850px] rounded-lg"
                   src={item.img}
                   alt={item.name}
                 />
               </div>
-              <div className="grow-[3]">
+              <div className="grow-[3] px-5">
                 <div className="max-w-lg">
                   <h5 className="text-2xl font-inter font-bold tracking-normal leading-none pb-4">
                     {item.name}

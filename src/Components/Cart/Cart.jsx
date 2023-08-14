@@ -13,7 +13,7 @@ import { removeFromCart } from "../../features/slices/cartSlice";
 const Cart = ({ openModal, setOpen }) => {
   const cart = useSelector((state) => state.cart.cart);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -33,7 +33,7 @@ const Cart = ({ openModal, setOpen }) => {
               {cart.map((item, index) => {
                 return (
                   <div key={index}>
-                    <div className="grid grid-cols-2 py-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 duration-300 py-4">
                       <div>
                         <img
                           className="h-[125px] rounded-md"
@@ -45,9 +45,6 @@ const Cart = ({ openModal, setOpen }) => {
                             {item.name}
                           </h4>
                         </div>
-                        {/* <div className="max-w-xs">
-                          <p className="text-xs font-inter pt-2">{item.text}</p>
-                        </div> */}
                       </div>
                       <div>
                         <p className="text-sm font-inter pt-2">

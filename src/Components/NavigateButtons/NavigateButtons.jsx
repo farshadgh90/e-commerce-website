@@ -21,7 +21,7 @@ const NavigateButtons = () => {
 
   return (
     <div>
-      <div className="flex justify-center items-center py-8">
+      <div className="flex justify-center items-center flex-wrap py-8">
         {buttons.map((button, index) => {
           return (
             <div key={index} className="mr-4">
@@ -31,7 +31,7 @@ const NavigateButtons = () => {
                   variant="outlined"
                   size="lg"
                   ripple={true}
-                  className="hover:bg-green-300 hover:text-white duration-300 ease-in-out"
+                  className='hover:bg-green-300 hover:text-white duration-300 ease-in-out my-2'
                   onClick={() => dispatch(filteredProducts(button))}
                 >
                   {button}
@@ -48,7 +48,7 @@ const NavigateButtons = () => {
       </div>
       <div className="flex justify-center items-center py-4">
         <img
-          className="h-[600px] w-[70%] rounded-md shadow-lg shadow-gray-600"
+          className="h-[350px] sm:h-[500px] md:h-[600px] duration-300 w-[70%] rounded-md shadow-lg shadow-gray-600"
           src={clothes}
           alt="clothes"
         />

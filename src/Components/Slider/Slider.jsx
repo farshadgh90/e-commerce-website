@@ -27,14 +27,14 @@ const Slider = () => {
               <div>
                 {parseInt(item.id) === slideIndex && (
                   <img
-                    className="h-[850px] w-full"
+                    className="lg:h-[850px] md:h-[600px] w-full"
                     src={item.img}
                     alt="shoes"
                   />
                 )}
               </div>
-              <div className="absolute top-16 mx-auto inset-x-1/4">
-                <p className="text-white text-4xl font-inter font-bold tracking-normal leading-none">
+              <div className="absolute top-10 left-[15%] px-4 md:top-16 mx-auto md:inset-x-1/4">
+                <p className="text-white lg:text-4xl font-inter lg:font-bold tracking-normal leading-none md:text-xl md:font-semibold">
                   {parseInt(item.id) === slideIndex && item.text}
                 </p>
               </div>
@@ -42,15 +42,15 @@ const Slider = () => {
           );
         })}
       </div>
-      <div className="flex absolute bottom-12 left-[45%]">
+      <div className="hidden sm:flex absolute bottom-12 left-[45%]">
         {sliderData.map((dot, index) => {
           return (
             <div className="mr-4" key={dot.id}>
               <div
                 className={
                   index === slideIndex
-                    ? "bg-green-300 rounded-full p-4 cursor-pointer"
-                    : "bg-white rounded-full p-4 cursor-pointer"
+                    ? "bg-green-300 rounded-full p-2 md:p-4 cursor-pointer"
+                    : "bg-white rounded-full p-2 md:p-4 cursor-pointer"
                 }
                 onClick={() => dispatch(dotSlide(index))}
               ></div>
@@ -59,7 +59,7 @@ const Slider = () => {
         })}
       </div>
       <button
-        className="absolute top-[50%] right-4 bg-white rounded-full p-2 hover:bg-green-300"
+        className="absolute top-[42%] sm:top-[50%] right-4 bg-white rounded-full p-2 hover:bg-green-300"
         onClick={() => dispatch(nextSlide(slideIndex + 1))}
       >
         <svg
@@ -68,7 +68,7 @@ const Slider = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-3 h-3 sm:w-6 sm:h-6"
         >
           <path
             strokeLinecap="round"
@@ -78,7 +78,7 @@ const Slider = () => {
         </svg>
       </button>
       <button
-        className="absolute top-[50%] left-4 bg-white rounded-full p-2 hover:bg-green-300"
+        className="absolute top-[42%] sm:top-[50%] left-4 bg-white rounded-full p-2 hover:bg-green-300"
         onClick={() => dispatch(prevSlide(slideIndex - 1))}
       >
         <svg
@@ -87,7 +87,7 @@ const Slider = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-3 h-3 sm:w-6 sm:h-6"
         >
           <path
             strokeLinecap="round"
