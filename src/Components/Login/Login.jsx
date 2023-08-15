@@ -5,6 +5,7 @@ import {
   CardBody,
   CardFooter,
   Typography,
+  Tooltip,
 } from "@material-tailwind/react";
 import { Button } from "@material-tailwind/react";
 import { Input } from "@material-tailwind/react";
@@ -46,14 +47,16 @@ const Login = () => {
             value={values.name}
             onChange={onChange}
           />
-          <Input
-            label="Password"
-            size="lg"
-            type="password"
-            name="password"
-            value={values.password}
-            onChange={onChange}
-          />
+          <Tooltip content="The password must be at least 4 characters and must contain one lowercase, one uppercase, a number, and a special character">
+            <Input
+              label="Password"
+              size="lg"
+              type="password"
+              name="password"
+              value={values.password}
+              onChange={onChange}
+            />
+          </Tooltip>
           <Input
             label="Image URL address"
             size="lg"
